@@ -545,6 +545,80 @@ textarea:focus-visible {
 .service-card p { font-size: 0.9rem; color: var(--color-navy-soft); margin: 0; }
 
 /* -----------------------------------------------------------
+   Premises / Tab Gallery
+----------------------------------------------------------- */
+.showcase-section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+.showcase-tabs {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  box-shadow: var(--shadow-card);
+  margin: 0 auto 32px;
+  width: fit-content;
+}
+.tab-button {
+  border: none;
+  background: transparent;
+  color: var(--color-navy-soft);
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.tab-button.active {
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-teal) 100%);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(11, 95, 165, 0.18);
+}
+.tab-panel {
+  display: none;
+}
+.tab-panel.active {
+  display: block;
+}
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+@media (max-width: 991px) { .showcase-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 575px) { .showcase-grid { grid-template-columns: 1fr; } }
+.showcase-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.showcase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+.showcase-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+.showcase-card figcaption {
+  padding: 16px 18px 18px;
+  color: var(--color-navy-soft);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* -----------------------------------------------------------
    Why choose us
 ----------------------------------------------------------- */
 .why-strip {

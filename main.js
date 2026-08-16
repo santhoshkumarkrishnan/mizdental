@@ -85,6 +85,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Tabbed gallery: infrastructure / procedure gallery
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const tabPanels = document.querySelectorAll(".tab-panel");
+
+  tabButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const target = button.dataset.tab;
+
+      tabButtons.forEach(btn => {
+        const isActive = btn === button;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-selected", String(isActive));
+      });
+
+      tabPanels.forEach(panel => {
+        const isActive = panel.id === `panel-${target}`;
+        panel.classList.toggle("active", isActive);
+        panel.hidden = !isActive;
+      });
+    });
+  });
+
   // Scroll-reveal animation
   const revealEls = document.querySelectorAll(".reveal:not(.in)");
   if ("IntersectionObserver" in window && revealEls.length) {
