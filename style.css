@@ -10,7 +10,7 @@
   --color-bg-tint-2: #F5F1E8;
   --color-navy: #14213D;
   --color-navy-soft: #445069;
-  --color-blue: #B77A1F;
+  --color-blue: #B77A1F;  
   --color-blue-deep: #805315;
   --color-teal: #D9A847;
   --color-teal-deep: #9A6818;
@@ -138,6 +138,13 @@ textarea:focus-visible {
 }
 .btn-whatsapp:hover { background: #1eb956; transform: translateY(-2px); }
 
+.btn-eka {
+  background: var(--color-blue);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(11, 95, 165, 0.22);
+}
+.btn-eka:hover { background: var(--color-blue-deep); color: #fff; transform: translateY(-2px); }
+
 .btn-ghost {
   background: transparent;
   color: var(--color-navy);
@@ -164,6 +171,10 @@ textarea:focus-visible {
   align-items: center;
   justify-content: space-between;
   height: 82px;
+  width: 100%;
+  max-width: 1440px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .brand {
@@ -184,16 +195,16 @@ textarea:focus-visible {
 
 .brand-mark {
   width: 92px;
-  height: 64px;
+  height: 70px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   overflow: hidden;
-  background: #fff;
+  background: #fffaf0;
   border: 1px solid rgba(20, 33, 61, 0.14);
-  box-shadow: 0 6px 20px rgba(11, 95, 165, 0.12);
+  box-shadow: 0 6px 20px rgba(11, 95, 165, 0.12), 0 0 0 3px rgba(213, 151, 44, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
@@ -215,17 +226,18 @@ textarea:focus-visible {
 .brand-mark svg { width: 24px; height: 24px; }
 
 .logo-img {
-  width: 94%;
-  height: 94%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: center;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  filter: contrast(1.18) saturate(1.25) drop-shadow(0 1px 2px rgba(106, 67, 12, 0.24));
+  mix-blend-mode: multiply;
   position: relative;
   z-index: 1;
 }
 
 @media (max-width: 575px) {
-  .brand-mark { width: 76px; height: 56px; }
+  .brand-mark { width: 76px; height: 60px; }
 }
 
 .brand-sub {
@@ -247,6 +259,7 @@ textarea:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  min-width: 138px;
 }
 
 .brand-name {
@@ -261,7 +274,7 @@ textarea:focus-visible {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 24px;
 }
 
 .main-nav a {
@@ -273,7 +286,7 @@ textarea:focus-visible {
 }
 .main-nav a:hover { color: var(--color-blue); }
 
-.header-cta { display: flex; align-items: center; gap: 12px; }
+.header-cta { display: flex; align-items: center; gap: 12px; flex-wrap: nowrap; }
 
 .nav-toggle {
   display: none;
@@ -284,7 +297,7 @@ textarea:focus-visible {
 }
 .nav-toggle svg { width: 26px; height: 26px; }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
   .main-nav { position: fixed; top: 82px; left: 0; right: 0; background: var(--color-white);
     flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 24px 20px;
     border-bottom: 1px solid var(--color-line); transform: translateY(-8px); opacity: 0;
@@ -292,7 +305,15 @@ textarea:focus-visible {
   .main-nav.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
   .main-nav a { padding: 14px 0; width: 100%; border-bottom: 1px solid var(--color-line); }
   .nav-toggle { display: block; }
+}
+
+@media (max-width: 991px) {
   .header-cta .btn-clinic:not(.mobile-visible) { display: none; }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .header-cta { gap: 8px; }
+  .header-cta .btn-sm-clinic { padding-left: 12px; padding-right: 12px; }
 }
 
 /* -----------------------------------------------------------
@@ -552,7 +573,7 @@ textarea:focus-visible {
 .service-card p { font-size: 0.9rem; color: var(--color-navy-soft); margin: 0; }
 
 /* -----------------------------------------------------------
-   Premises / Tab Gallery
+  Patient Stories / Tab Gallery
 ----------------------------------------------------------- */
 .showcase-section {
   padding-top: 96px;
@@ -560,6 +581,7 @@ textarea:focus-visible {
 }
 .showcase-tabs {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 12px;
@@ -570,6 +592,7 @@ textarea:focus-visible {
   box-shadow: var(--shadow-card);
   margin: 0 auto 32px;
   width: fit-content;
+  max-width: 100%;
 }
 .tab-button {
   border: none;
@@ -824,6 +847,7 @@ textarea:focus-visible {
   outline: none; border-color: var(--color-blue);
 }
 .booking-modal .btn-clinic { width: 100%; margin-top: 6px; }
+.booking-modal .booking-external { margin-top: 12px; }
 
 /* Reveal-on-scroll */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
