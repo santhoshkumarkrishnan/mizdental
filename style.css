@@ -1,25 +1,25 @@
 /* ===========================================================
    MIZ Dental Clinic — Design System
-   Palette: cool white / deep trust-blue / teal accent / navy text
-   Type: Sora (display) + Inter (body)
+  Palette: warm ivory / implant gold / deep navy
+  Type: Roboto Slab (display) + Manrope (body)
    =========================================================== */
 
 :root {
   --color-bg: #FAFBFC;
-  --color-bg-tint: #EAF3FA;
-  --color-bg-tint-2: #F1F8F7;
+  --color-bg-tint: #FBF5E8;
+  --color-bg-tint-2: #F5F1E8;
   --color-navy: #14213D;
   --color-navy-soft: #445069;
-  --color-blue: #0B5FA5;
-  --color-blue-deep: #073E6E;
-  --color-teal: #1FA6A0;
-  --color-teal-deep: #147F7A;
+  --color-blue: #B77A1F;
+  --color-blue-deep: #805315;
+  --color-teal: #D9A847;
+  --color-teal-deep: #9A6818;
   --color-white: #FFFFFF;
-  --color-line: #DCE6EF;
+  --color-line: #E7DCC7;
   --color-whatsapp: #25D366;
 
-  --font-display: 'Sora', 'Segoe UI', sans-serif;
-  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-display: 'Roboto Slab', Georgia, serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
 
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -183,16 +183,17 @@ textarea:focus-visible {
 }
 
 .brand-mark {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
+  width: 92px;
+  height: 64px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-teal) 100%);
-  box-shadow: 0 6px 20px rgba(11, 95, 165, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: #fff;
+  border: 1px solid rgba(20, 33, 61, 0.14);
+  box-shadow: 0 6px 20px rgba(11, 95, 165, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
@@ -201,8 +202,8 @@ textarea:focus-visible {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 100%);
   pointer-events: none;
 }
 
@@ -214,13 +215,17 @@ textarea:focus-visible {
 .brand-mark svg { width: 24px; height: 24px; }
 
 .logo-img {
-  width: 100%;
-  height: 100%;
+  width: 94%;
+  height: 94%;
   object-fit: contain;
   object-position: center;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 575px) {
+  .brand-mark { width: 76px; height: 56px; }
 }
 
 .brand-sub {
