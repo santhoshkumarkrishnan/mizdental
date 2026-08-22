@@ -202,9 +202,9 @@ textarea:focus-visible {
   justify-content: center;
   flex-shrink: 0;
   overflow: hidden;
-  background: #fffaf0;
-  border: 1px solid rgba(20, 33, 61, 0.14);
-  box-shadow: 0 6px 20px rgba(11, 95, 165, 0.12), 0 0 0 3px rgba(213, 151, 44, 0.1);
+  background: #080808;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28), 0 0 0 3px rgba(213, 151, 44, 0.14);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
@@ -214,7 +214,7 @@ textarea:focus-visible {
   position: absolute;
   inset: 0;
   border-radius: 10px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 100%);
+  background: transparent;
   pointer-events: none;
 }
 
@@ -231,7 +231,7 @@ textarea:focus-visible {
   object-fit: contain;
   object-position: center;
   filter: contrast(1.18) saturate(1.25) drop-shadow(0 1px 2px rgba(106, 67, 12, 0.24));
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal;
   position: relative;
   z-index: 1;
 }
