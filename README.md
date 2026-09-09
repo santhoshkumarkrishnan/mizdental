@@ -11,7 +11,7 @@ A single-page, SEO-friendly site built with HTML, Bootstrap 5 (grid/utilities) a
    - `index.html` → the JSON-LD `"telephone"` field near the top of `<head>`
 
 2. **Domain**
-   Replace `https://www.mizdentalclinic.in/` in `index.html` (canonical, Open Graph, JSON-LD) and in `sitemap.xml` / `robots.txt` with your actual domain once you buy one.
+   The site is configured for `https://mizdental.in/` in `index.html` (canonical, Open Graph, JSON-LD), `sitemap.xml`, and `robots.txt`.
 
 3. **Real photos**
    The hero and clinic sections currently use a graphic/icon treatment instead of stock photos (since I didn't have real ones). Once you have real photos of the clinic, Dr. Zahar Unnissa, and the space, they'll upgrade the site a lot — happy to wire them in.
