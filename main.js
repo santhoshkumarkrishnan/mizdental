@@ -107,14 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Gallery hover preview and full-size viewer.
+  // Gallery full-size viewer.
   const galleryImages = document.querySelectorAll(".showcase-card img");
   if (galleryImages.length) {
-    const preview = document.createElement("div");
-    preview.className = "gallery-preview";
-    preview.innerHTML = '<img alt=""><div class="gallery-preview-label">Click to view full image</div>';
-    document.body.appendChild(preview);
-
     const lightbox = document.createElement("div");
     lightbox.className = "gallery-lightbox";
     lightbox.setAttribute("role", "dialog");
@@ -123,18 +118,10 @@ document.addEventListener("DOMContentLoaded", () => {
     lightbox.innerHTML = '<button class="gallery-lightbox-close" type="button" aria-label="Close enlarged image">&times;</button><img alt="">';
     document.body.appendChild(lightbox);
 
-    const previewImage = preview.querySelector("img");
     const lightboxImage = lightbox.querySelector("img");
     const closeButton = lightbox.querySelector(".gallery-lightbox-close");
-    let hidePreviewTimer;
-
-    const hidePreview = () => {
-      clearTimeout(hidePreviewTimer);
-      preview.classList.remove("visible");
-    };
 
     const openLightbox = (image) => {
-      hidePreview();
       lightboxImage.src = image.currentSrc || image.src;
       lightboxImage.alt = image.alt;
       lightbox.classList.add("open");
@@ -143,20 +130,16 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     galleryImages.forEach(image => {
-      image.addEventListener("mouseenter", () => {
-        clearTimeout(hidePreviewTimer);
-        previewImage.src = image.currentSrc || image.src;
-        previewImage.alt = image.alt;
-        const cardRect = image.closest(".showcase-card").getBoundingClientRect();
-        const left = Math.min(cardRect.left, window.innerWidth - preview.offsetWidth - 16);
-        preview.style.left = `${Math.max(16, left)}px`;
-        preview.style.top = `${Math.min(cardRect.bottom + 12, window.innerHeight - preview.offsetHeight - 16)}px`;
-        preview.classList.add("visible");
-      });
-      image.addEventListener("mouseleave", () => {
-        hidePreviewTimer = setTimeout(hidePreview, 120);
-      });
+      image.tabIndex = 0;
+      image.setAttribute("role", "button");
+      image.setAttribute("aria-label", `View enlarged image: ${image.alt}`);
       image.addEventListener("click", () => openLightbox(image));
+      image.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openLightbox(image);
+        }
+      });
     });
 
     const closeLightbox = () => {
