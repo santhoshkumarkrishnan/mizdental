@@ -5,4 +5,19 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url><loc>https://mizdental.in/services/dental-check-up-digital-x-ray.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/teeth-cleaning.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/cavity-fillings.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/child-dental-care.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/root-canal-treatment.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/gum-disease-treatment.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/braces-clear-aligners.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/tooth-extraction.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/dental-implants.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/digital-smile-designing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/teeth-whitening.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/emergency-dental-care.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/laser-dentistry.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/oral-cancer-screening.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mizdental.in/services/tobacco-cessation-counseling.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

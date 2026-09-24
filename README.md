@@ -39,12 +39,15 @@ A single-page, SEO-friendly site built with HTML, Bootstrap 5 (grid/utilities) a
 ## Structure
 
 ```
-index.html      Main page (all sections)
-css/style.css   Design system + all styling
-js/main.js      Nav, booking modal → WhatsApp handoff, scroll reveals
+index.html      Main page and service directory
+services/       One SEO-friendly detail page per treatment
+style.css       Shared design system and page styling
+main.js         Nav, booking modal -> WhatsApp handoff, scroll reveals
 robots.txt
-sitemap.xml
+sitemap.xml     Homepage plus all service detail URLs
 ```
+
+Each treatment page uses a descriptive static URL such as `services/root-canal-treatment.html`, with a unique title, meta description, treatment explanation, FAQ content and links back to the main site. Add new service pages to both the homepage service grid and `sitemap.xml`.
 
 ## Local preview
 

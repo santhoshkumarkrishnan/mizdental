@@ -274,7 +274,8 @@ textarea:focus-visible {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: clamp(14px, 1.5vw, 24px);
+  flex-shrink: 1;
 }
 
 .main-nav a {
@@ -595,7 +596,38 @@ textarea:focus-visible {
 }
 .service-icon svg { width: 26px; height: 26px; color: var(--color-blue); }
 .service-card h3 { font-size: 1.08rem; margin-bottom: 8px; }
+.service-card h3 a { color: inherit; }
+.service-card h3 a::after { content: "  →"; color: var(--color-blue); font-family: var(--font-body); font-size: 0.9em; }
 .service-card p { font-size: 0.9rem; color: var(--color-navy-soft); margin: 0; }
+
+/* -----------------------------------------------------------
+   Service detail pages
+----------------------------------------------------------- */
+.service-page-hero {
+  padding: 92px 0 72px;
+  background: linear-gradient(135deg, var(--color-bg-tint) 0%, var(--color-bg) 65%);
+}
+.service-page-hero h1 { max-width: 780px; font-size: clamp(2.3rem, 5vw, 4.4rem); }
+.service-page-hero .lede { max-width: 720px; color: var(--color-navy-soft); font-size: 1.12rem; margin: 20px 0 28px; }
+.service-page-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr); gap: 56px; align-items: start; }
+.service-page-content h2 { margin: 38px 0 14px; font-size: 1.7rem; }
+.service-page-content h2:first-child { margin-top: 0; }
+.service-page-content p, .service-page-content li { color: var(--color-navy-soft); }
+.service-page-content ul { padding-left: 20px; }
+.service-page-aside { position: sticky; top: 110px; padding: 28px; background: var(--color-white); border: 1px solid var(--color-line); border-radius: var(--radius-md); box-shadow: var(--shadow-card); }
+.service-page-aside h3 { font-size: 1.2rem; margin-bottom: 14px; }
+.service-page-aside p { color: var(--color-navy-soft); font-size: 0.92rem; }
+.service-page-aside .btn-clinic { width: 100%; margin-top: 10px; }
+.service-faq { margin-top: 34px; border-top: 1px solid var(--color-line); }
+.service-faq details { padding: 18px 0; border-bottom: 1px solid var(--color-line); }
+.service-faq summary { cursor: pointer; font-family: var(--font-display); font-weight: 700; }
+.service-faq p { margin: 12px 0 0; }
+.service-breadcrumb { margin-bottom: 20px; color: var(--color-teal-deep); font-size: 0.85rem; font-weight: 700; }
+@media (max-width: 767px) {
+  .service-page-hero { padding: 64px 0 52px; }
+  .service-page-layout { grid-template-columns: 1fr; gap: 38px; }
+  .service-page-aside { position: static; }
+}
 
 /* -----------------------------------------------------------
   Patient Stories / Tab Gallery
@@ -852,11 +884,12 @@ textarea:focus-visible {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
   gap: 40px;
   margin-bottom: 40px;
 }
-@media (max-width: 767px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 991px) { .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 24px; } }
+@media (max-width: 575px) { .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
 .footer-grid h5 { font-family: var(--font-display); font-size: 0.92rem; margin-bottom: 16px; }
 .footer-grid ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .footer-grid a { color: var(--color-navy-soft); font-size: 0.9rem; transition: color 0.15s; }
@@ -871,8 +904,11 @@ textarea:focus-visible {
 .footer-bottom {
   border-top: 1px solid var(--color-line);
   padding-top: 24px;
-  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+  display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px 24px;
   font-size: 0.82rem; color: var(--color-navy-soft);
+}
+@media (max-width: 575px) {
+  .footer-bottom { flex-direction: column; gap: 6px; }
 }
 
 /* -----------------------------------------------------------
