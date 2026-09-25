@@ -5,7 +5,20 @@
 // --- CONFIG: update these two lines with the clinic's real details ---
 const CLINIC_WHATSAPP_NUMBER = "918618826027"; // country code + number, no + or spaces
 const CLINIC_NAME = "MIZ Dental Clinic";
+const GOOGLE_ANALYTICS_ID = "G-LG42DH7XQX";
 // -----------------------------------------------------------
+
+if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  window.gtag("js", new Date());
+  window.gtag("config", GOOGLE_ANALYTICS_ID);
+
+  const analyticsScript = document.createElement("script");
+  analyticsScript.async = true;
+  analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`;
+  document.head.appendChild(analyticsScript);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   // Footer year
